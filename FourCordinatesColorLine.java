@@ -21,11 +21,11 @@ public void mouseMoved(MouseEvent e1){
 	g.setColor(Color.green);
 	g.drawLine(0,0,x,y);
 	g.setColor(Color.orange);
-	g.drawLine(700,0,x,y);
+	g.drawLine(1300,0,x,y);
 	g.setColor(Color.blue);
-	g.drawLine(0,900,x,y);
+	g.drawLine(0,1000,x,y);
 	g.setColor(Color.red);
-	g.drawLine(700,900,x,y);
+	g.drawLine(1300,1000,x,y);
 
 
 }
