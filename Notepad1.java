@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.regex.*;
-
+//I made this using awt (all this classes belongs to AWT only few are common in swing too)
 class Notepad1 extends Frame implements WindowListener,ActionListener,ItemListener{
 
 		MenuItem newI, openI, saveI, saveAsI, exitI, cutI, copyI, pasteI, findI, replaceI ;
