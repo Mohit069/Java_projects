@@ -1,0 +1,140 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionListener;
+public class CardClass implements ActionListener {
+
+        Frame f; Panel p1,p2,p3,p4,p5,p6; Button b1 ,b2; CardLayout cl;
+        Label l1; TextField t1; Label l2;  TextField t2; Label l3; TextField t3; Label l4; TextField t4;
+
+        Label l1a; TextField t1a; Label l2a;TextField t2a;Label l3a;TextField t3a;Label l4a;TextField t4a;
+
+        Label l1b; TextField t1b;Label l2b;TextField t2b; Label l3b;TextField t3b;Label l4b; TextField t4b;
+
+        Label l1c; TextField t1c;Label l2c;TextField t2c;Label l3c;TextField t3c;Label l4c;TextField t4c;
+
+        public CardClass(){
+        f = new Frame();
+        //f.setLayout(new GridLayout());
+        f.setSize(300,300);
+
+        cl = new CardLayout();
+        p1 = new Panel();
+        p1.setLayout(cl);
+        f.add(p1);
+
+        p2 = new Panel();
+        b1= new Button("Prev");
+        b2 = new Button("Next");
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        p2.add(b1);
+        p2.add(b2);
+        f.add(p2,"South");
+
+//---------------Panel 3------------------------------------------
+        p3 = new Panel();
+        p3.setLayout(new GridLayout(4,2));
+
+        l1 = new Label("Name");
+        t1 = new TextField();
+        l2 = new Label("Surname");
+        t2 = new TextField();
+        l3 = new Label("Age");
+        t3 = new TextField();
+        l4 = new Label("Qualification");
+        t4 = new TextField();
+
+        p3.add(l1); p3.add(t1);
+        p3.add(l2); p3.add(t2);
+        p3.add(l3); p3.add(t3);
+        p3.add(l4); p3.add(t4);
+
+        p1.add(p3);
+
+//----------------panel 4 --------------
+
+        p4 = new Panel();
+        p4.setLayout(new GridLayout(4,2));
+
+        l1a = new Label("H.no");
+        t1a = new TextField();
+        l2a = new Label("Area");
+        t2a = new TextField();
+        l3a = new Label("City");
+        t3a = new TextField();
+        l4a = new Label("State");
+        t4a = new TextField();
+
+        p4.add(l1a); p4.add(t1a);
+        p4.add(l2a); p4.add(t2a);
+        p4.add(l3a); p4.add(t3a);
+        p4.add(l4a); p4.add(t4a);
+
+        p1.add(p4);
+
+//----------------Panel 5-----------------------------------------------
+
+        p5 = new Panel();
+        p5.setLayout(new GridLayout(4,2));
+
+        l1b = new Label("Pincode");
+        t1b = new TextField();
+        l2b = new Label("Mobile");
+        t2b = new TextField();
+        l3b = new Label("Phone");
+        t3b = new TextField();
+        l4b = new Label("Email");
+        t4b = new TextField();
+
+        p5.add(l1b); p5.add(t1b);
+        p5.add(l2b); p5.add(t2b);
+        p5.add(l3b); p5.add(t3b);
+        p5.add(l4b); p5.add(t4b);
+
+        p1.add(p5);
+
+//----------------------panel 6-----------------------------------------
+
+        p6 = new Panel();
+        p6.setLayout(new GridLayout(4,2));
+
+        l1c = new Label("Salary");
+        Panel ee = new Panel();
+            t1c = new TextField();
+//            ee.setLayout(new FlowLayout());
+//            ee.add(t1c);
+        l2c = new Label("Hra");
+        t2c = new TextField();
+        l3c = new Label("T.A");
+        t3c = new TextField();
+        l4c = new Label("D.A");
+        t4c = new TextField();
+
+        p6.add(l1c); p6.add(t1c);
+        p6.add(l2c); p6.add(t2c);
+        p6.add(l3c); p6.add(t3c);
+        p6.add(l4c); p6.add(t4c);
+
+        p1.add(p6);
+
+        f.setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e){
+//            if(e.getSource()==b1)
+//                cl.previous(p1);
+//            else if(e.getSource()==b2)
+//                cl.next(p1);
+
+            String str= e.getActionCommand();
+            if(str.equals("Prev")){
+                    cl.previous(p1);
+            }
+            else if(str.equals("Next")){
+                    cl.next(p1);
+            }
+    }
+    public static void main(String[] args) {
+        CardClass cc = new CardClass();
+
+    }
+}
